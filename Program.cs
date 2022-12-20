@@ -4,36 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp35
+namespace ConsoleApp41
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int num, i, sum, start, end;
-            Console.WriteLine("Starting Number");
-            start = int.Parse(Console.ReadLine());
-            Console.WriteLine("Ending Number");
-            end = int.Parse(Console.ReadLine());
-            for (num = start; num <= end; num++)
-            {
-                sum = 0;
+            int x, n1, n2;
+            double sum = 0;
+            Console.WriteLine("ENTER 1ST NUMBER");
+            n1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("ENTER 2ND NUMBER");
+            n2 = int.Parse(Console.ReadLine());
 
-                for (i = 2; i <= num / 2; i++)
+            for (x = n1; x <= n2; x++)
+            {
+                for (int j = 1; j < x; j++)
                 {
-                    if (num % i == 0)
+                    if (x % j == 0)
                     {
-                        sum++;
-                        break;
+                        sum += j;
                     }
                 }
-
-                if (sum == 0 && num != 1)
-                    Console.WriteLine("{0} ", num);
-
+                if (sum == x)
+                {
+                    Console.WriteLine(sum);
+                }
+                sum = 0;
             }
-            Console.WriteLine("Thanks For Dealing With Us <3 ");
             Console.ReadKey();
+
 
         }
     }
